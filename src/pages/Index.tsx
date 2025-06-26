@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ArrowRight, Brain, Target, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -10,9 +9,23 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Index = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const section = sessionStorage.getItem('scrollToSection');
+    if (section) {
+      setTimeout(() => {
+        const el = document.getElementById(section);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+        sessionStorage.removeItem('scrollToSection');
+      }, 100);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-black text-foreground">
