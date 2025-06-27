@@ -9,12 +9,14 @@ const PricingTier = ({
   description,
   features,
   isPopular,
+  buttonText,
 }: {
   name: string;
   price: string;
   description: string;
   features: string[];
   isPopular?: boolean;
+  buttonText?: string;
 }) => (
   <CardSpotlight className={`h-full ${isPopular ? "border-primary" : "border-white/10"} border-2`}>
     <div className="relative h-full p-6 flex flex-col">
@@ -38,7 +40,7 @@ const PricingTier = ({
         ))}
       </ul>
       <Button className="button-gradient w-full">
-        Start Trading
+        {buttonText || 'Upgrade'}
       </Button>
     </div>
   </CardSpotlight>
@@ -78,6 +80,7 @@ export const PricingSection = () => {
             "Progress tracking",
             "Access to Basic Models"
           ]}
+          buttonText="Start Learning"
         />
         <PricingTier
           name="Pro Learner"
@@ -94,6 +97,7 @@ export const PricingSection = () => {
             "Community support"
           ]}
           isPopular
+          buttonText="Upgrade"
         />
         <PricingTier
           name="Enterprise"
@@ -108,6 +112,7 @@ export const PricingSection = () => {
             "API access & integrations",
             "Custom analytics dashboard"
           ]}
+          buttonText="Create new team"
         />
       </div>
     </section>

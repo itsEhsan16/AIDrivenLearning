@@ -159,7 +159,7 @@ const Courses = () => {
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-2">
-              Trending Technical Courses <Badge className="ml-2" variant="secondary">🔥 Trending</Badge>
+              Trending Technical Courses
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Discover the most popular and highly rated courses in AI, Web Development, Data Science, and more.
